@@ -5,6 +5,6 @@ document.getElementById("btn").addEventListener("click", () => {
   if (email === "masum@bank.com" && password === "12345") {
     location.href = "bank.html";
   } else {
-    console.log("invalid input");
+    alert("Invalid email or password");
   }
 });
