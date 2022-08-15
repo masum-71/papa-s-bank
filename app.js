@@ -1,12 +1,10 @@
+document.getElementById("btn").addEventListener("click", () => {
+  const email = document.getElementById("email").value;
+  const password = document.getElementById("password").value;
 
-
-document.getElementById("btn").addEventListener("click", ()=>{
-    const email = document.getElementById("email").value;
-    const password = document.getElementById("password").value;
-    
-    if(email === "sontan@bap.com" && password === "secret"){
-        location.href = "bank.html"
-    }else{
-        console.log("invalid input")
-    }
-})
+  if (email === "masum@bank.com" && password === "12345") {
+    location.href = "bank.html";
+  } else {
+    console.log("invalid input");
+  }
+});
