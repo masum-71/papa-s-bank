@@ -1,7 +1,8 @@
 //Add addEventListener for Deposit
 document.getElementById("btn-deposit").addEventListener("click", (e) => {
   const depoInput = document.getElementById("deposit").value;
-  if (depoInput === "") {
+  document.getElementById("deposit").value = "";
+  if (depoInput === "" || isNaN(depoInput)) {
     alert("you have to enter amount");
   } else {
     //set Deposit balance
@@ -21,9 +22,10 @@ document.getElementById("btn-deposit").addEventListener("click", (e) => {
 //Add addEventListener for Withdraw
 document.getElementById("btn-withdraw").addEventListener("click", () => {
   const withdrawInput = document.getElementById("withdraw").value;
+  document.getElementById("withdraw").value = "";
   const balance = document.getElementById("balance");
   let previousBalance = parseFloat(balance.innerText);
-  if (withdrawInput === "") {
+  if (withdrawInput === "" ||  isNaN(withdrawInput)) {
     alert("you have to enter amount");
   } else if (previousBalance < parseFloat(withdrawInput)) {
     alert("You can't withdraw more than Total Balance");
@@ -37,6 +39,6 @@ document.getElementById("btn-withdraw").addEventListener("click", () => {
 
     balance.innerText = previousBalance - parseFloat(withdrawInput);
 
-    document.getElementById("withdraw").value = "";
+    
   }
 });
